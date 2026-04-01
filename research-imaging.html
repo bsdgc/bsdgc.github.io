@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quantitative Imaging - Runwen Yao</title>
+  <link rel="stylesheet" href="secondary.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="brand-block">
+      <a class="brand-title" href="index.html">Runwen Yao</a>
+      <div class="brand-sub">Biomolecular condensates &middot; mesoscale organization &middot; cellular function</div>
+    </div>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <div class="nav-item nav-item--has-menu">
+        <a href="research.html" class="active nav-parent" aria-haspopup="true">Research</a>
+        <div class="nav-dropdown" role="menu" aria-label="Research themes">
+          <a href="research.html">Research Overview</a>
+          <a href="research-mesoscale.html">Theme I: Mesoscale regulation</a>
+          <a href="research-rna.html">Theme II: Physical principles</a>
+          <a href="research-imaging.html" class="active">Theme III: Quantitative tools</a>
+        </div>
+      </div>
+      <a href="publications.html">Publications</a>
+      <a href="cv.html">CV</a>
+      <a href="gallery.html">Gallery</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page-main">
+  <section class="section research-intro-section subpage-top">
+    <div class="container section-head research-intro-head">
+      <div>
+        <h1 class="section-title top-page-title">Quantitative imaging and reconstitution</h1>
+      </div>
+    </div>
+  </section>
+
+  <section class="section subpage-body">
+    <div class="container subpage-content">
+      <section class="detail-section">
+        <p>Biomolecular condensates are difficult to study because the methods used to observe them often perturb the very properties one hopes to measure. A major part of my work is therefore to build quantitative tools that preserve condensate architecture while enabling sensitive analysis of molecular organization and dynamics. I combine super-resolution imaging, biochemical reconstitution, and single-molecule approaches to create experimental systems that make condensates measurable across scales.</p>
+      </section>
+
+      <section class="detail-section detail-section--with-side-figure">
+        <div class="detail-section-main">
+          <h2>Preserving condensate architecture in cells</h2>
+          <p>A central challenge in imaging nuclear condensates is that conventional fixation methods often force a trade-off between RNA detection, protein labeling, and structural preservation. To overcome this, I developed an optimized fixation strategy that combines glyoxal with paraformaldehyde (<a class="inline-citation" href="https://doi.org/10.1261/rna.078671.120" target="_blank" rel="noopener noreferrer">RNA, 2021</a>). This method markedly improves RNA FISH signal by increasing nuclear permeability and probe accessibility, while maintaining low background and avoiding additional autofluorescence. At the same time, it preserves protein epitopes and fluorescent protein signals during immunostaining and RNA FISH, enabling more accurate protein labeling and simultaneous multicolor visualization of RNAs and proteins in the same nuclear condensate. Importantly, this improvement in signal does not come at the cost of structure: the method better preserves cell morphology and condensate ultrastructure, allowing covisualization of nucleoli, paraspeckles, nuclear speckles, Cajal bodies, and other nuclear bodies with minimal distortion even under super-resolution microscopy. </p>
+        </div>
+
+        <figure class="subpage-figure subpage-figure--one-third soft-card soft-card--solid">
+          <img src="research-media/RNA_2021.png" alt="Placeholder figure for mesoscale condensate organization">
+          <figcaption>SIM imaging shows that GO/PFA fixation maintains the ultrastructural organization of condensates more faithfully than conventional PFA fixation, yielding images that more closely match live-cell morphology (<a class="inline-citation" href="https://doi.org/10.1261/rna.078671.120" target="_blank" rel="noopener noreferrer">RNA, 2021</a>).</figcaption>
+        </figure>
+      </section>
+
+      <section class="detail-section">
+        <div class="detail-section-main">
+          <h2>High-sensitivity assays for reconstituted condensates</h2>
+          <p>In biochemical reconstitution, a parallel problem is undesired interaction between condensates and glass surfaces, which can distort droplet morphology, alter material properties, and generate background that limits sensitive measurements. To address this, I developed a simple surface passivation strategy based on self-assembly of Pluronic F127 on hydrophobic glass (<a class="inline-citation" href="https://doi.org/10.1073/pnas.2403013121" target="_blank" rel="noopener noreferrer">PNAS, 2024</a>). PF127 forms a dense hydrated brush layer that strongly suppresses nonspecific binding of both condensates and dilute-phase molecules, outperforming traditional BSA- and mPEG-based methods across diverse condensate systems. The method is straightforward and robust: it requires less than 1 hour of active handling, can be completed within 3 hours, and reduces cost by 99% relative to standard mPEG/BSA passivation, making high-quality condensate assays much more accessible and reproducible.</p>
+
+        <figure class="subpage-figure subpage-figure--two-thirds soft-card soft-card--solid">
+          <img src="research-media/PNAS_2024_2.png" alt="Placeholder figure for mesoscale condensate organization">
+          <figcaption>Representative cross-sectional images of Dhh1, Nck/N-WASP, and polySUMO/polySIM condensates on bare glass or surfaces passivated with BSA, mPEG, mPEG/BSA, or PF127. PF127 most effectively suppresses condensate spreading across all three systems, preserving rounded morphology and high contact angle, consistent with reduced nonspecific surface interactions without perturbing condensate physical properties (<a class="inline-citation" href="https://doi.org/10.1073/pnas.2403013121" target="_blank" rel="noopener noreferrer">PNAS, 2024</a>).</figcaption>
+        </figure>          
+          <p>Crucially, this gain in performance does not come at the expense of condensate integrity. PF127 passivation remains stable across extensive washing, broad pH and salt ranges, and large imaging areas, while preserving condensate phase behavior and material properties. By combining PF127 with Biotin–NeutrAvidin anchor points, I further enabled controlled immobilization of condensates without inducing appreciable wetting or altering intrinsic physical behavior. This platform supports movement-sensitive measurements such as FRAP, droplet fusion assays, 3D imaging, and especially high-precision single-molecule analyses by minimizing background fluorescence and stabilizing droplets during acquisition. Using this strategy, I was able to resolve single-molecule dynamics within reconstituted condensates and begin probing their internal molecular heterogeneity.</p>
+
+        <figure class="subpage-figure soft-card soft-card--solid">
+          <img src="research-media/PNAS_2024_1.png" alt="Placeholder figure for mesoscale condensate organization">
+          <figcaption>A self-assembled PF127 layer is combined with sparse biotin–NeutrAvidin anchor points to tether condensates to the surface while minimizing nonspecific interactions. This strategy allows stable imaging of condensates for movement-sensitive assays without substantial wetting or distortion of condensate properties (<a class="inline-citation" href="https://doi.org/10.1073/pnas.2403013121" target="_blank" rel="noopener noreferrer">PNAS, 2024</a>).</figcaption>
+        </figure>
+        
+      </div>
+      </section>
+
+      <section class="detail-section">
+        <h2>Integrated imaging and perturbation tools for condensate dynamics</h2>
+        <p>Beyond dedicated methods papers, I have also contributed to complementary tools for interrogating condensate-associated RNA behavior, including a CRISPR–Cas13-based live-cell RNA imaging system (<a class="inline-citation" href="https://doi.org/10.1016/j.molcel.2019.10.024" target="_blank" rel="noopener noreferrer">Molecular Cell, 2019a</a>) and a CRISPR-based interference strategy for selectively blocking RNA–protein interactions (<a class="inline-citation" href="https://doi.org/10.1016/j.molcel.2019.08.014" target="_blank" rel="noopener noreferrer">Molecular Cell, 2019b</a>). Together with my extensive use of super-resolution microscopy, these efforts define a broader research direction: building quantitative experimental systems that connect condensate architecture to molecular dynamics and biological function.</p>
+      </section>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div>Runwen Yao &middot; HHMI / UT Southwestern Medical Center</div>
+    <div>
+      <a href="mailto:Runwen.Yao@UTSouthwestern.edu">Email</a> &middot;
+      <a href="https://scholar.google.com/citations?user=LvwsvigAAAAJ&hl" target="_blank" rel="noopener noreferrer">Google Scholar</a> &middot;
+      
+      <a href="cv.html">CV</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
