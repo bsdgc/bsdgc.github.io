@@ -69,6 +69,7 @@
       font-family: Arial, Helvetica, sans-serif;
       font-size: .9rem;
       color: var(--muted);
+      white-space:nowrap;
     }
 
     .nav{
@@ -89,6 +90,10 @@
     .nav > .nav-item > .nav-parent{
       padding-bottom: 3px;
       border-bottom: 1px solid transparent;
+    }
+
+    .nav-label-short{
+      display:none;
     }
 
     .nav > a.active,
@@ -179,6 +184,39 @@
       background:linear-gradient(180deg, rgba(255,255,255,0.96) 0%, rgba(236,226,214,0.93) 100%);
     }
 
+    .nav-toggle,
+    .mobile-nav-backdrop{
+      display:none;
+    }
+
+    .nav-toggle{
+      appearance:none;
+      -webkit-appearance:none;
+      border:1px solid #d8cec2;
+      border-radius:12px;
+      width:42px;
+      height:42px;
+      padding:0;
+      background:linear-gradient(180deg, rgba(255,255,255,0.96) 0%, rgba(241,236,230,0.94) 100%);
+      box-shadow:inset 0 1px 0 rgba(255,255,255,0.96), 0 6px 16px rgba(60,44,31,0.08);
+      align-items:center;
+      justify-content:center;
+      gap:5px;
+      cursor:pointer;
+    }
+
+    .nav-toggle-line{
+      display:block;
+      width:18px;
+      height:1.5px;
+      border-radius:999px;
+      background:#3f3831;
+    }
+
+    body.mobile-nav-open{
+      overflow:hidden;
+    }
+
     /* HERO */
     .hero{
       position: relative;
@@ -195,7 +233,7 @@
         ),
         url("hero-wide.png");
       background-size: cover;
-      background-position: center;
+      background-position: 48% center;
       background-repeat: no-repeat;
       display:flex;
       align-items:flex-end;
@@ -220,6 +258,19 @@
       font-weight: 600;
       max-width: none;
       white-space: nowrap;
+    }
+
+    .hero-name-line,
+    .hero-tagline-line{
+      display:block;
+      white-space:nowrap;
+    }
+
+    .hero-tagline-line{
+      margin-top:10px;
+      font-weight:400;
+      font-size:.6em;
+      letter-spacing:.01em;
     }
 
     /* VISION */
@@ -320,11 +371,16 @@
     .about-grid{
       display:grid;
       grid-template-columns: minmax(0, 1fr) 380px;
-      gap: 72px;
+      grid-template-areas:
+        "copy photo"
+        "actions photo";
+      column-gap:72px;
+      row-gap:26px;
       align-items:start;
     }
 
     .about-photo{
+      grid-area:photo;
       width:100%;
       max-width: 380px;
       aspect-ratio: 4 / 5;
@@ -343,6 +399,7 @@
     }
 
     .about-copy{
+      grid-area:copy;
       max-width: 760px;
     }
 
@@ -355,6 +412,14 @@
       font-size: 1.12rem;
       line-height: 1.68;
       color:#453f39;
+    }
+
+    .about-actions{
+      grid-area:actions;
+    }
+
+    .about-actions .button-row{
+      margin-top:0;
     }
 
     .contact-line{
@@ -386,25 +451,171 @@
       flex-wrap:wrap;
     }
 
+    .footer-identity{
+      line-height:1.45;
+    }
+
+    .footer-affiliation{
+      display:block;
+    }
+
     @media (max-width: 980px){
       .vision-grid,
       .about-grid{
         grid-template-columns: 1fr;
       }
 
+      .about-grid{
+        grid-template-areas:
+          "copy"
+          "photo"
+          "actions";
+        row-gap:16px;
+      }
+
+      .site-header{
+        backdrop-filter:blur(12px);
+      }
+
+      .header-inner{
+        position:static;
+        flex-direction:column;
+        align-items:flex-start;
+        gap:10px;
+        padding:16px 0 12px;
+      }
+
+      .brand-block{
+        padding-left:0;
+        padding-right:0;
+      }
+
+      .brand-title{
+        font-size:1.42rem;
+        line-height:1.06;
+      }
+
+      .brand-sub{
+        margin-top:8px;
+        max-width:100%;
+        font-size:.74rem;
+        line-height:1.45;
+      }
+
+      .nav{
+        position:static;
+        width:100%;
+        margin-left:0;
+        margin-top:10px;
+        padding:10px 0 0;
+        border-right:none;
+        background:transparent;
+        box-shadow:none;
+        transform:none;
+        transition:none;
+        display:grid;
+        grid-template-columns:repeat(5, minmax(0, 1fr));
+        align-items:stretch;
+        column-gap:6px;
+        overflow:visible;
+        border-top:1px solid rgba(216,206,194,0.92);
+      }
+
+      .nav::-webkit-scrollbar{
+        display:none;
+      }
+
+      .nav > a,
+      .nav > .nav-item{
+        min-width:0;
+      }
+
+      .nav > a,
+      .nav > .nav-item > .nav-parent{
+        display:inline-flex;
+        align-items:center;
+        justify-content:center;
+        width:100%;
+        min-height:38px;
+        padding:8px 10px;
+        border:1px solid transparent;
+        border-radius:999px;
+        background:rgba(255,255,255,0.62);
+        white-space:nowrap;
+      }
+
+      .nav > a.active,
+      .nav > a:hover,
+      .nav > .nav-item > .nav-parent.active,
+      .nav > .nav-item > .nav-parent:hover{
+        border-color:#d8cec2;
+        background:#fffdfa;
+        box-shadow:0 6px 16px rgba(60,44,31,0.06);
+      }
+
+      .nav-item{
+        display:flex;
+        align-items:stretch;
+        flex-direction:row;
+      }
+
+      .nav-parent{
+        width:100%;
+        justify-content:center;
+      }
+
+      .nav-dropdown{
+        display:none;
+      }
+
+      .nav-item--has-menu .nav-parent::after{
+        display:none;
+      }
+
       .hero{
-        min-height: 42vh;
+        min-height: 21vh;
+        background-size:cover;
+        background-position:46% 30%;
+      }
+
+      .hero-inner{
+        padding-bottom:20px;
+      }
+
+      .hero-text{
+        padding-left:0;
+        padding-right:0;
       }
 
       .hero h1{
-        max-width: 100%;
-        white-space: normal;
+        font-size:clamp(2.25rem, 7.3vw, 3.7rem);
+      }
+
+      .hero-tagline-line{
+        font-size:.5em;
       }
 
       .about-photo{
         max-width: 340px;
         margin-left: 0;
         justify-self:start;
+      }
+
+      .vision{
+        padding:44px 0 38px;
+      }
+
+      .vision-grid{
+        gap:26px;
+      }
+
+      .button-row--about-links{
+        flex-wrap:nowrap;
+        gap:10px;
+      }
+
+      .button-row--about-links .btn{
+        white-space:nowrap;
       }
     }
 
@@ -414,64 +625,90 @@
       }
 
       .header-inner{
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .nav{
-        gap:16px;
-        margin-left: 0;
-        padding-bottom: 0;
-      }
-
-      .hero-text{
-        padding-left: 20px;
-        padding-right: 20px;
+        padding-top:12px;
+        padding-bottom:8px;
       }
 
       .brand-block{
-        padding-left: 20px;
+        padding-left:0;
+        padding-right:0;
+      }
+
+      .brand-title{
+        font-size:1.3rem;
+      }
+
+      .brand-sub{
+        margin-top:6px;
+        font-size:.7rem;
+        line-height:1.42;
+      }
+
+      .nav{
+        margin-top:8px;
+        padding-top:8px;
+        column-gap:4px;
+        font-size:clamp(.68rem, 2.6vw, .78rem);
+      }
+
+      .nav-label-full{
+        display:none;
+      }
+
+      .nav-label-short{
+        display:inline;
+      }
+
+      .nav > a,
+      .nav > .nav-item > .nav-parent{
+        min-height:34px;
+        padding:6px 7px;
+      }
+
+      .hero{
+        min-height: 18vh;
+        background-size:cover;
+        background-position:46% 28%;
+      }
+
+      .hero-inner{
+        padding-bottom:16px;
       }
 
       .hero h1{
-        font-size: clamp(2.35rem, 10vw, 4.25rem);
-        white-space: normal;
+        font-size:clamp(1.92rem, 8vw, 2.6rem);
       }
 
-      .nav-item{
-        width:100%;
-        align-items:flex-start;
-        flex-direction:column;
-      }
-
-      .nav-dropdown{
-        position:static;
-        transform:none;
-        min-width:0;
-        width:100%;
+      .hero-tagline-line{
+        font-size:.46em;
         margin-top:8px;
-        padding:8px;
-        border-radius:14px;
-        opacity:0;
-        visibility:hidden;
-        pointer-events:none;
-        max-height:0;
-        overflow:hidden;
-        box-shadow:none;
-        background:rgba(255,255,255,0.56);
       }
 
-      .nav-item--has-menu:hover .nav-dropdown,
-      .nav-item--has-menu:focus-within .nav-dropdown{
-        opacity:1;
-        visibility:visible;
-        pointer-events:auto;
-        max-height:360px;
-        transform:none;
+      .button-row--about-links{
+        gap:8px;
       }
 
-      .nav-item--has-menu .nav-parent::after{
-        display:none;
+      .button-row--about-links .btn{
+        padding:11px 13px;
+        font-size:.8rem;
+      }
+
+      .vision{
+        padding-top:36px;
+        padding-bottom:30px;
+      }
+
+      .vision-grid{
+        gap:20px;
+      }
+
+      .vision .button-row{
+        margin-top:22px;
+      }
+
+      .about{
+        padding-top:42px;
+        padding-bottom:58px;
       }
 
       .vision-copy p,
@@ -501,7 +738,7 @@
           <a href="research-imaging.html">Theme III: Quantitative tools</a>
         </div>
       </div>
-      <a href="publications.html">Publications</a>
+      <a href="publications.html"><span class="nav-label-full">Publications</span><span class="nav-label-short">Pubs</span></a>
       <a href="cv.html">CV</a>
       <a href="gallery.html">Gallery</a>
     </nav>
@@ -514,10 +751,8 @@
     <div class="container hero-inner">
       <div class="hero-text">
         <h1>
-          Runwen Yao, Ph.D.<br>
-          <span style="font-weight:400; font-size:0.6em;">
-          Biomolecular condensates at the mesoscale
-          </span>
+          <span class="hero-name-line">Runwen Yao, Ph.D.</span>
+          <span class="hero-tagline-line">Biomolecular condensates at the mesoscale</span>
         </h1>
       </div>
     </div>
@@ -563,15 +798,18 @@
           In parallel, I develop and apply quantitative imaging, in vitro reconstitution, and single-molecule approaches to directly probe condensate organization and dynamics.
         </p>
 
-        <div class="button-row">
-          <a class="btn" href="cv.html">CV</a>
-          <a class="btn" href="mailto:Runwen.Yao@UTSouthwestern.edu">Email</a>
-          <a class="btn" href="https://scholar.google.com/citations?user=LvwsvigAAAAJ&hl" target="_blank" rel="noopener noreferrer">Google Scholar</a>
-        </div>
       </div>
 
       <div class="about-photo">
         <img src="runwen-photo.png" alt="Portrait of Runwen Yao">
+      </div>
+
+      <div class="about-actions">
+        <div class="button-row button-row--about-links">
+          <a class="btn" href="cv.html">CV</a>
+          <a class="btn" href="mailto:Runwen.Yao@UTSouthwestern.edu">Email</a>
+          <a class="btn" href="https://scholar.google.com/citations?user=LvwsvigAAAAJ&hl" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+        </div>
       </div>
     </div>
   </section>
@@ -580,7 +818,7 @@
 
 <footer class="footer">
   <div class="container footer-inner">
-    <div>Runwen Yao &middot; HHMI / UT Southwestern Medical Center</div>
+    <div class="footer-identity">Runwen Yao <span class="footer-affiliation">HHMI / UT Southwestern Medical Center</span></div>
     <div>
       <a href="mailto:Runwen.Yao@UTSouthwestern.edu">Email</a> &middot;
       <a href="https://scholar.google.com/citations?user=LvwsvigAAAAJ&hl" target="_blank"
@@ -593,6 +831,7 @@
 
 </body>
 </html>
+
 
 
 
