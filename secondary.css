@@ -76,11 +76,36 @@ select{
   padding:24px 0 20px;
 }
 
+.brand-area{
+  display:flex;
+  align-items:flex-end;
+  gap:14px;
+  min-width:0;
+  padding-left:32px;
+}
+
+.brand-logo-link{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex:0 0 auto;
+  width:90px;
+  height:60px;
+  border-radius:14px;
+  overflow:hidden;
+}
+
+.brand-logo{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+}
+
 .brand-block{
   display:flex;
   flex-direction:column;
   justify-content:flex-end;
-  padding-left:32px;
+  min-width:0;
 }
 
 .brand-title{
@@ -102,7 +127,7 @@ select{
   align-items:center;
   align-self:flex-end;
   margin-left:auto;
-  gap:22px;
+  gap:18px;
   flex-wrap:wrap;
   font-family:Arial, Helvetica, sans-serif;
   font-size:.92rem;
@@ -117,6 +142,23 @@ select{
   border-bottom:1px solid transparent;
 }
 
+.language-toggle{
+  appearance:none;
+  -webkit-appearance:none;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:30px;
+  border:1px solid var(--line-strong);
+  border-radius:999px;
+  padding:5px 11px;
+  background:rgba(255,255,255,0.62);
+  color:var(--muted);
+  font:inherit;
+  line-height:1;
+  cursor:pointer;
+}
+
 .nav-label-short{
   display:none;
 }
@@ -124,7 +166,8 @@ select{
 .nav > a.active,
 .nav > a:hover,
 .nav > .nav-item > .nav-parent.active,
-.nav > .nav-item > .nav-parent:hover{
+.nav > .nav-item > .nav-parent:hover,
+.language-toggle:hover{
   color:var(--text);
   border-color:#beb5ab;
 }
@@ -1463,6 +1506,81 @@ body.mobile-nav-open{
   opacity:1;
 }
 
+html[lang="zh-CN"] body{
+  font-family:"Microsoft YaHei", "微软雅黑", "PingFang SC", "Hiragino Sans GB", "Heiti SC", SimHei, "黑体", Arial, sans-serif;
+  line-height:1.82;
+}
+
+html[lang="zh-CN"] .nav,
+html[lang="zh-CN"] .brand-title,
+html[lang="zh-CN"] .brand-sub,
+html[lang="zh-CN"] .footer,
+html[lang="zh-CN"] .btn,
+html[lang="zh-CN"] .language-toggle,
+html[lang="zh-CN"] .eyebrow,
+html[lang="zh-CN"] .tag,
+html[lang="zh-CN"] .research-card-label,
+html[lang="zh-CN"] .research-front p,
+html[lang="zh-CN"] .research-back p,
+html[lang="zh-CN"] .research-link,
+html[lang="zh-CN"] .publication-title,
+html[lang="zh-CN"] .publication-meta,
+html[lang="zh-CN"] .publication-authors,
+html[lang="zh-CN"] .publication-note,
+html[lang="zh-CN"] .cv-period,
+html[lang="zh-CN"] .cv-item-sub,
+html[lang="zh-CN"] .protocol-content p,
+html[lang="zh-CN"] .gallery-piece p,
+html[lang="zh-CN"] .detail-card p,
+html[lang="zh-CN"] .reference-card p,
+html[lang="zh-CN"] .subpage-figure figcaption,
+html[lang="zh-CN"] .breadcrumbs{
+  font-family:"Microsoft YaHei", "微软雅黑", "PingFang SC", "Hiragino Sans GB", "Heiti SC", SimHei, "黑体", Arial, sans-serif;
+}
+
+html[lang="zh-CN"] .page-title,
+html[lang="zh-CN"] .section-title,
+html[lang="zh-CN"] .section-title.top-page-title,
+html[lang="zh-CN"] .cv-name,
+html[lang="zh-CN"] .cv-name.top-page-title,
+html[lang="zh-CN"] .detail-title{
+  font-family:"Microsoft YaHei", "微软雅黑", "PingFang SC", "Hiragino Sans GB", "Heiti SC", SimHei, "黑体", Arial, sans-serif;
+  font-weight:600;
+  letter-spacing:0;
+}
+
+html[lang="zh-CN"] .publication-title,
+html[lang="zh-CN"] .pub-year{
+  letter-spacing:0;
+}
+
+html[lang="zh-CN"] .eyebrow,
+html[lang="zh-CN"] .eyebrow--normal-case,
+html[lang="zh-CN"] .research-card-label,
+html[lang="zh-CN"] .tag{
+  text-transform:none;
+  letter-spacing:.08em;
+}
+
+html[lang="zh-CN"] .brand-sub{
+  white-space:normal;
+}
+
+html[lang="zh-CN"] .section-copy p,
+html[lang="zh-CN"] .page-lead,
+html[lang="zh-CN"] .detail-section p,
+html[lang="zh-CN"] .detail-section li,
+html[lang="zh-CN"] .cv-role,
+html[lang="zh-CN"] .cv-item-title,
+html[lang="zh-CN"] .cv-item-sub,
+html[lang="zh-CN"] .research-front p,
+html[lang="zh-CN"] .research-back p,
+html[lang="zh-CN"] .protocol-content p,
+html[lang="zh-CN"] .gallery-piece p,
+html[lang="zh-CN"] .subpage-figure figcaption{
+  line-height:1.82;
+}
+
 
 @media (hover:none), (max-width: 980px){
   .research-card{
@@ -1503,6 +1621,10 @@ body.mobile-nav-open{
     font-weight:600;
     color:#fff;
     text-shadow:0 2px 12px rgba(0,0,0,0.28);
+  }
+
+  html[lang="zh-CN"] .research-front::after{
+    content:"进入详情页 ->";
   }
 }
 
@@ -1546,6 +1668,18 @@ body.mobile-nav-open{
     padding:16px 0 12px;
   }
 
+  .brand-area{
+    padding-left:0;
+    padding-right:0;
+    align-items:center;
+  }
+
+  .brand-logo-link{
+    width:78px;
+    height:52px;
+    border-radius:12px;
+  }
+
   .brand-block{
     padding-left:0;
     padding-right:0;
@@ -1575,7 +1709,7 @@ body.mobile-nav-open{
     transform:none;
     transition:none;
     display:grid;
-    grid-template-columns:repeat(5, minmax(0, 1fr));
+    grid-template-columns:repeat(6, minmax(0, 1fr));
     align-items:stretch;
     column-gap:6px;
     overflow:visible;
@@ -1587,12 +1721,14 @@ body.mobile-nav-open{
   }
 
   .nav > a,
-  .nav > .nav-item{
+  .nav > .nav-item,
+  .nav > .language-toggle{
     min-width:0;
   }
 
   .nav > a,
-  .nav > .nav-item > .nav-parent{
+  .nav > .nav-item > .nav-parent,
+  .nav > .language-toggle{
     display:inline-flex;
     align-items:center;
     justify-content:center;
@@ -1608,7 +1744,8 @@ body.mobile-nav-open{
   .nav > a.active,
   .nav > a:hover,
   .nav > .nav-item > .nav-parent.active,
-  .nav > .nav-item > .nav-parent:hover{
+  .nav > .nav-item > .nav-parent:hover,
+  .nav > .language-toggle:hover{
     border-color:#d8cec2;
     background:#fffdfa;
     box-shadow:0 6px 16px rgba(60,44,31,0.06);
@@ -1721,6 +1858,15 @@ body.mobile-nav-open{
     padding-bottom:8px;
   }
 
+  .brand-area{
+    gap:10px;
+  }
+
+  .brand-logo-link{
+    width:69px;
+    height:46px;
+  }
+
   .brand-block{
     padding-left:0;
     padding-right:0;
@@ -1752,7 +1898,8 @@ body.mobile-nav-open{
   }
 
   .nav > a,
-  .nav > .nav-item > .nav-parent{
+  .nav > .nav-item > .nav-parent,
+  .nav > .language-toggle{
     min-height:34px;
     padding:6px 7px;
   }
