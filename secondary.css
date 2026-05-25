@@ -1549,6 +1549,57 @@ html[lang="zh-CN"] .detail-title{
   letter-spacing:0;
 }
 
+html[lang="zh-CN"] .page-title{
+  font-size:clamp(2.45rem, 3.55vw, 3.7rem);
+}
+
+html[lang="zh-CN"] .section-title{
+  font-size:clamp(1.85rem, 2.45vw, 2.55rem);
+  line-height:1.16;
+}
+
+html[lang="zh-CN"] .section-title.top-page-title,
+html[lang="zh-CN"] .cv-name.top-page-title{
+  font-size:clamp(2rem, 2.9vw, 2.55rem);
+  line-height:1.14;
+}
+
+html[lang="zh-CN"] .cv-name{
+  font-size:clamp(2.7rem, 4vw, 4.25rem);
+}
+
+html[lang="zh-CN"] .detail-title{
+  font-size:clamp(2.15rem, 3.25vw, 3.45rem);
+}
+
+html[lang="zh-CN"] .detail-section h2,
+html[lang="zh-CN"] .cv-section h2{
+  font-size:1.58rem;
+  line-height:1.18;
+}
+
+html[lang="zh-CN"] .research-front h3,
+html[lang="zh-CN"] .research-back h3{
+  font-size:1.74rem;
+  line-height:1.12;
+}
+
+html[lang="zh-CN"] .protocol-visual-title{
+  font-size:1.58rem;
+  line-height:1.12;
+}
+
+html[lang="zh-CN"] .protocol-content h3,
+html[lang="zh-CN"] .reference-card h3{
+  font-size:1.2rem;
+  line-height:1.24;
+}
+
+html[lang="zh-CN"] .gallery-piece h3{
+  font-size:1.42rem;
+  line-height:1.14;
+}
+
 html[lang="zh-CN"] .publication-title,
 html[lang="zh-CN"] .pub-year{
   letter-spacing:0;
@@ -1579,6 +1630,43 @@ html[lang="zh-CN"] .protocol-content p,
 html[lang="zh-CN"] .gallery-piece p,
 html[lang="zh-CN"] .subpage-figure figcaption{
   line-height:1.82;
+}
+
+html[lang="zh-CN"] .cv-role{
+  font-size:1.04rem;
+  line-height:1.76;
+}
+
+html[lang="zh-CN"] .page-top .section-copy p,
+html[lang="zh-CN"] .research-intro-section .section-copy p,
+html[lang="zh-CN"] .publications-top .section-copy p,
+html[lang="zh-CN"] .protocol-top .section-copy p,
+html[lang="zh-CN"] .gallery-top .section-copy p,
+html[lang="zh-CN"] .subpage-top .section-copy p,
+html[lang="zh-CN"] .page-lead{
+  line-height:1.72;
+}
+
+html[lang="zh-CN"] p{
+  text-indent:2em;
+}
+
+html[lang="zh-CN"] .page-top .section-copy p,
+html[lang="zh-CN"] .research-intro-section .section-copy p,
+html[lang="zh-CN"] .publications-top .section-copy p,
+html[lang="zh-CN"] .protocol-top .section-copy p,
+html[lang="zh-CN"] .gallery-top .section-copy p,
+html[lang="zh-CN"] .subpage-top .section-copy p,
+html[lang="zh-CN"] .page-lead,
+html[lang="zh-CN"] .cv-role,
+html[lang="zh-CN"] .research-front p,
+html[lang="zh-CN"] .research-back p,
+html[lang="zh-CN"] .protocol-content p,
+html[lang="zh-CN"] .gallery-piece p,
+html[lang="zh-CN"] .detail-card p,
+html[lang="zh-CN"] .reference-card p,
+html[lang="zh-CN"] .subpage-figure figcaption{
+  text-indent:0;
 }
 
 
@@ -1669,15 +1757,48 @@ html[lang="zh-CN"] .subpage-figure figcaption{
   }
 
   .brand-area{
+    display:grid;
+    grid-template-columns:minmax(0, 1fr) auto;
+    grid-template-areas:
+      "title logo"
+      "subtitle subtitle";
+    column-gap:12px;
+    row-gap:7px;
     padding-left:0;
     padding-right:0;
     align-items:center;
+    width:100%;
   }
 
   .brand-logo-link{
+    grid-area:logo;
+    justify-self:end;
+    align-self:center;
+    transform:translateY(2px);
     width:78px;
     height:52px;
     border-radius:12px;
+  }
+
+  .brand-block{
+    display:contents;
+  }
+
+  .brand-title{
+    grid-area:title;
+    min-width:0;
+    align-self:center;
+    font-size:1.42rem;
+    line-height:1.06;
+  }
+
+  .brand-sub{
+    grid-area:subtitle;
+    margin-top:0;
+    max-width:100%;
+    font-size:clamp(.62rem, 2.35vw, .74rem);
+    line-height:1.35;
+    white-space:nowrap;
   }
 
   .brand-block{
@@ -1685,16 +1806,12 @@ html[lang="zh-CN"] .subpage-figure figcaption{
     padding-right:0;
   }
 
-  .brand-title{
-    font-size:1.42rem;
-    line-height:1.06;
+  .brand-sub-keyword{
+    display:inline;
   }
 
-  .brand-sub{
-    margin-top:8px;
-    max-width:100%;
-    font-size:.74rem;
-    line-height:1.45;
+  .brand-sub-separator{
+    display:inline;
   }
 
   .nav{
@@ -1849,6 +1966,12 @@ html[lang="zh-CN"] .subpage-figure figcaption{
     line-height:1.1;
   }
 
+  html[lang="zh-CN"] .section-title.top-page-title,
+  html[lang="zh-CN"] .cv-name.top-page-title{
+    font-size:clamp(1.62rem, 6.8vw, 2.05rem);
+    line-height:1.18;
+  }
+
   .container{
     padding:0 20px;
   }
@@ -1908,6 +2031,33 @@ html[lang="zh-CN"] .subpage-figure figcaption{
   .detail-title,
   .cv-name{
     font-size:clamp(2.35rem, 10vw, 4rem);
+  }
+
+  html[lang="zh-CN"] .page-title,
+  html[lang="zh-CN"] .detail-title,
+  html[lang="zh-CN"] .cv-name{
+    font-size:clamp(1.95rem, 8vw, 2.8rem);
+    line-height:1.16;
+  }
+
+  html[lang="zh-CN"] .section-copy p,
+  html[lang="zh-CN"] .detail-section p,
+  html[lang="zh-CN"] .detail-section li,
+  html[lang="zh-CN"] .cv-item-title{
+    font-size:1rem;
+    line-height:1.78;
+  }
+
+  html[lang="zh-CN"] .cv-role,
+  html[lang="zh-CN"] .page-lead,
+  html[lang="zh-CN"] .page-top .section-copy p,
+  html[lang="zh-CN"] .research-intro-section .section-copy p,
+  html[lang="zh-CN"] .publications-top .section-copy p,
+  html[lang="zh-CN"] .protocol-top .section-copy p,
+  html[lang="zh-CN"] .gallery-top .section-copy p,
+  html[lang="zh-CN"] .subpage-top .section-copy p{
+    font-size:.96rem;
+    line-height:1.68;
   }
 
   .page-lead,

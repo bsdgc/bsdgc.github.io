@@ -37,6 +37,7 @@
     ["Contact me", "联系我"],
 
     ["Runwen Yao, Ph.D.", "探究介观尺度下的生物分子凝聚体"],
+    ["CV page title", "简历"],
     ["Biomolecular condensates at the mesoscale", "Biomolecular condensates at the mesoscale"],
     ["Research vision", "研究愿景"],
     ["How condensate organization gives rise to cellular function.", "生物分子凝聚体的结构排布如何决定其生物学功能"],
@@ -141,7 +142,7 @@
     ["Dr. Lau Wing Sang Outstanding Undergraduate Student Fellowship", "刘永生优秀本科生奖学金"],
     ["International Genetically Engineered Machine (iGEM) Competition — Gold Medal, with awards for Best New BioBrick Part, Best Model, and Best Wiki; Finalist and 2nd Runner-up", "国际基因工程机器大赛（iGEM）金奖，并获 Best New BioBrick Part、Best Model、Best Wiki；Finalist 与 2nd Runner-up"],
     ["National Scholarship for Undergraduate Students (Top 0.2% in China)", "本科生国家奖学金"],
-    ["Selected Talks", "受邀与入选报告"],
+    ["Selected Talks", "部分受邀与入选报告"],
     //["Short Talk (selected): Size-Dependent Functional Transitions in Actin Signaling Protein Condensates", "口头报告（入选）：Size-Dependent Functional Transitions in Actin Signaling Protein Condensates"],
     //["Keystone Symposia, Breckenridge, USA", "Keystone Symposia，美国 Breckenridge"],
     //["Poster Presentation (selected): A Simple, Efficient, and Low-Cost Surface Passivation Method for Phase Separation Studies via Self-Assembled Monolayer", "海报展示（入选）：用于相分离研究的的简单、高效、低成本 self-assembled monolayer 表面钝化方法"],
@@ -320,6 +321,7 @@
     ".gallery-piece p",
     ".subpage-figure figcaption",
     ".breadcrumbs",
+    "[data-translation-key]",
   ].join(",");
 
   const originalHtml = new WeakMap();
@@ -376,7 +378,7 @@
       }
 
       const sourceHtml = originalHtml.get(element);
-      const key = htmlToText(sourceHtml);
+      const key = element.getAttribute("data-translation-key") || htmlToText(sourceHtml);
 
       if (language === ZH && translations.has(key)) {
         element.innerHTML = translations.get(key);
@@ -425,6 +427,26 @@
     });
   };
 
+  const formatBrandSubtitles = () => {
+    document.querySelectorAll(".brand-sub").forEach((element) => {
+      const parts = htmlToText(element.innerHTML)
+        .split("·")
+        .map((part) => part.trim())
+        .filter(Boolean);
+
+      if (parts.length !== 3) {
+        return;
+      }
+
+      element.innerHTML = parts.map((part, index) => {
+        const separator = index < parts.length - 1
+          ? '<span class="brand-sub-separator"> · </span>'
+          : "";
+        return `<span class="brand-sub-keyword">${part}</span>${separator}`;
+      }).join("");
+    });
+  };
+
   const updateToggleState = (language) => {
     document.querySelectorAll("[data-language-toggle]").forEach((toggle) => {
       const isChinese = language === ZH;
@@ -444,6 +466,7 @@
 
     applyElementTranslations(currentLanguage);
     applyAttributeTranslations(currentLanguage);
+    formatBrandSubtitles();
     updateToggleState(currentLanguage);
 
     if (shouldPersist) {

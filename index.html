@@ -536,6 +536,15 @@
       letter-spacing:0;
     }
 
+    html[lang="zh-CN"] .hero h1{
+      font-size:clamp(2.6rem, 3.1vw, 4.35rem);
+    }
+
+    html[lang="zh-CN"] .section-title{
+      font-size:clamp(1.85rem, 2.45vw, 2.55rem);
+      line-height:1.16;
+    }
+
     html[lang="zh-CN"] .eyebrow{
       text-transform:none;
       letter-spacing:.08em;
@@ -548,6 +557,7 @@
     html[lang="zh-CN"] .vision-copy p,
     html[lang="zh-CN"] .about-copy p{
       line-height:1.82;
+      text-indent:2em;
     }
 
     @media (max-width: 980px){
@@ -577,15 +587,48 @@
       }
 
       .brand-area{
+        display:grid;
+        grid-template-columns:minmax(0, 1fr) auto;
+        grid-template-areas:
+          "title logo"
+          "subtitle subtitle";
+        column-gap:12px;
+        row-gap:7px;
         padding-left:0;
         padding-right:0;
         align-items:center;
+        width:100%;
       }
 
       .brand-logo-link{
+        grid-area:logo;
+        justify-self:end;
+        align-self:center;
+        transform:translateY(2px);
         width:78px;
         height:52px;
         border-radius:12px;
+      }
+
+      .brand-block{
+        display:contents;
+      }
+
+      .brand-title{
+        grid-area:title;
+        min-width:0;
+        align-self:center;
+        font-size:1.42rem;
+        line-height:1.06;
+      }
+
+      .brand-sub{
+        grid-area:subtitle;
+        margin-top:0;
+        max-width:100%;
+        font-size:clamp(.62rem, 2.35vw, .74rem);
+        line-height:1.35;
+        white-space:nowrap;
       }
 
       .brand-block{
@@ -593,16 +636,12 @@
         padding-right:0;
       }
 
-      .brand-title{
-        font-size:1.42rem;
-        line-height:1.06;
+      .brand-sub-keyword{
+        display:inline;
       }
 
-      .brand-sub{
-        margin-top:8px;
-        max-width:100%;
-        font-size:.74rem;
-        line-height:1.45;
+      .brand-sub-separator{
+        display:inline;
       }
 
       .nav{
@@ -695,6 +734,23 @@
 
       .hero h1{
         font-size:clamp(2.25rem, 7.3vw, 3.7rem);
+      }
+
+      html[lang="zh-CN"] .hero h1{
+        font-size:clamp(1.45rem, 4.8vw, 2.15rem);
+        line-height:1.18;
+        max-width:100%;
+        white-space:nowrap;
+      }
+
+      html[lang="zh-CN"] .hero-name-line{
+        white-space:nowrap;
+      }
+
+      html[lang="zh-CN"] .vision .section-title,
+      html[lang="zh-CN"] .about-copy .section-title{
+        font-size:clamp(1.45rem, 4.4vw, 1.9rem);
+        line-height:1.2;
       }
 
       .hero-tagline-line{
@@ -793,6 +849,22 @@
 
       .hero h1{
         font-size:clamp(1.92rem, 8vw, 2.6rem);
+      }
+
+      html[lang="zh-CN"] .hero h1{
+        font-size:clamp(1.22rem, 5.45vw, 1.72rem);
+        width:100%;
+        white-space:nowrap;
+      }
+
+      html[lang="zh-CN"] .hero-name-line{
+        white-space:nowrap;
+      }
+
+      html[lang="zh-CN"] .vision .section-title,
+      html[lang="zh-CN"] .about-copy .section-title{
+        font-size:clamp(1.28rem, 5.3vw, 1.58rem);
+        line-height:1.22;
       }
 
       .hero-tagline-line{
