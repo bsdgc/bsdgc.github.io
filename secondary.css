@@ -1632,6 +1632,16 @@ html[lang="zh-CN"] .subpage-figure figcaption{
   line-height:1.82;
 }
 
+html[lang="zh-CN"] .section-copy p,
+html[lang="zh-CN"] .page-lead,
+html[lang="zh-CN"] .detail-section p,
+html[lang="zh-CN"] .detail-section li,
+html[lang="zh-CN"] .protocol-content p{
+  text-align:justify;
+  text-align-last:left;
+  text-justify:inter-ideograph;
+}
+
 html[lang="zh-CN"] .cv-role{
   font-size:1.04rem;
   line-height:1.76;
