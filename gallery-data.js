@@ -1,4 +1,4 @@
-// Put gallery media files in /gallery-media and reference them here.
+// Put gallery media files in /gallery/science or /gallery/lens and reference them here.
 // Supported mediaType values:
 // - "image" for png / jpg / webp / gif
 // - "video" for mp4 / webm loops
