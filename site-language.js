@@ -46,6 +46,7 @@
     ["← Back to Gallery", "← 返回图集"],
     ["Microscopy, condensates, and cellular organization viewed through the experimental systems that shape my research.", "一些我在科研中得到的有趣的科研成像"],
     ["Travel, light, and everyday observations gathered with a quiet attention to space, texture, and atmosphere.", "实验室之外，我在日常生活中的所见所闻。"],
+    ["footer-rights", `&copy; 姚润文。重复使用图片或图表前，请先<a href="mailto:Runwen.Yao@UTSouthwestern.edu">联系我</a>。`],
     ["Light and distance", "光与距离"],
     ["Quiet street", "安静的街道"],
     ["Open sky", "开阔天空"],

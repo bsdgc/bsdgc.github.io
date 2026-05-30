@@ -502,7 +502,8 @@
     .footer-inner{
       display:flex;
       justify-content:space-between;
-      gap:20px;
+      align-items:flex-end;
+      gap:28px;
       flex-wrap:wrap;
     }
 
@@ -512,6 +513,27 @@
 
     .footer-affiliation{
       display:block;
+    }
+
+    .footer-rights{
+      max-width:520px;
+      text-align:right;
+    }
+
+    .footer-rights span{
+      font-family:Arial, Helvetica, sans-serif;
+      font-size:.88rem;
+      line-height:1.55;
+      color:var(--muted);
+    }
+
+    .footer-rights a{
+      color:#7e5d3b;
+      text-decoration:none;
+    }
+
+    .footer-rights a:hover{
+      color:var(--text);
     }
 
     html[lang="zh-CN"] body{
@@ -911,6 +933,10 @@
         font-size: 1rem;
       }
 
+      .footer-rights{
+        text-align:left;
+      }
+
       html[lang="zh-CN"] .vision-copy p{
         text-align:left;
         text-align-last:auto;
@@ -1007,7 +1033,7 @@
       </div>
 
       <div class="about-photo">
-        <img src="runwen-photo.png" alt="Portrait of Runwen Yao">
+        <img src="Runwen_2.png" alt="Portrait of Runwen Yao">
       </div>
 
       <div class="about-actions">
@@ -1025,12 +1051,8 @@
 <footer class="footer">
   <div class="container footer-inner">
     <div class="footer-identity">Runwen Yao <span class="footer-affiliation">HHMI / UT Southwestern Medical Center</span></div>
-    <div>
-      <a href="mailto:Runwen.Yao@UTSouthwestern.edu">Email</a> &middot;
-      <a href="https://scholar.google.com/citations?user=LvwsvigAAAAJ&hl" target="_blank"
-         rel="noopener noreferrer">Google Scholar</a> &middot;
-      
-      <a href="cv.html">CV</a>
+    <div class="footer-rights" role="note">
+      <span data-translation-key="footer-rights">&copy; Runwen Yao. Please <a href="mailto:Runwen.Yao@UTSouthwestern.edu">contact me</a> before reusing images or figures.</span>
     </div>
   </div>
 </footer>
