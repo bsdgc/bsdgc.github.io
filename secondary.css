@@ -2344,6 +2344,9 @@ html[lang="zh-CN"] .subpage-figure figcaption{
     text-align:left;
     text-align-last:auto;
     text-justify:auto;
+    word-break:normal;
+    overflow-wrap:normal;
+    line-break:auto;
   }
 
   .page-lead,
@@ -2359,7 +2362,7 @@ html[lang="zh-CN"] .subpage-figure figcaption{
   .page-lead{
     width:100%;
     max-width:none;
-    text-wrap:normal;
+    text-wrap:wrap;
   }
 
   .protocol-content{

@@ -928,27 +928,25 @@
         padding-bottom:58px;
       }
 
-      .vision-copy p,
-      .about-copy p{
-        font-size: 1rem;
-      }
-
       .vision-copy,
       .about-copy{
         width:100%;
         max-width:none;
       }
 
-      .vision-copy p{
+      .vision-copy p,
+      .about-copy p{
         margin:0 0 18px 0;
+        font-size:1rem;
         line-height:1.68;
+        color:#453f39;
         max-width:none;
-        text-wrap:normal;
+        text-wrap:wrap;
       }
 
-      .about-copy p{
-        max-width:none;
-        text-wrap:normal;
+      .vision-copy p:last-child,
+      .about-copy p:last-child{
+        margin-bottom:0;
       }
 
       html[lang="zh-CN"] .vision-copy p,
@@ -957,6 +955,9 @@
         text-align-last:auto;
         text-justify:auto;
         text-indent:2em;
+        word-break:normal;
+        overflow-wrap:normal;
+        line-break:auto;
       }
 
       .footer-rights{
