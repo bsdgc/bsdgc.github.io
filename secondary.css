@@ -2336,6 +2336,16 @@ html[lang="zh-CN"] .subpage-figure figcaption{
     line-height:1.68;
   }
 
+  html[lang="zh-CN"] .section-copy p,
+  html[lang="zh-CN"] .page-lead,
+  html[lang="zh-CN"] .detail-section p,
+  html[lang="zh-CN"] .detail-section li,
+  html[lang="zh-CN"] .protocol-content p{
+    text-align:left;
+    text-align-last:auto;
+    text-justify:auto;
+  }
+
   .page-lead,
   .section-copy p,
   .detail-section p,
