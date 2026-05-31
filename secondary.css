@@ -2354,6 +2354,14 @@ html[lang="zh-CN"] .subpage-figure figcaption{
     font-size:1rem;
   }
 
+  .section-copy,
+  .section-copy p,
+  .page-lead{
+    width:100%;
+    max-width:none;
+    text-wrap:normal;
+  }
+
   .protocol-content{
     padding:24px 22px;
   }
